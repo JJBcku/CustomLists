@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="CommonVectorObject.h" />
     <ClInclude Include="IDObject.h" />
+    <ClInclude Include="IDObjectDef.h" />
     <ClInclude Include="IterativeUnsortedIDVector.h" />
     <ClInclude Include="OrderIndependentDeletionStack.h" />
     <ClInclude Include="UnsortedIDVector.h" />
