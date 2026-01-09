@@ -42,16 +42,7 @@ public:
 		: _nextID(std::move(rhs._nextID)), _vectorID(std::move(rhs._vectorID)), _list(std::move(rhs._list)), _deletedList(std::move(rhs._deletedList)), _IDList(std::move(rhs._IDList)) {};
 
 	UnsortedIDVector<T>& operator=(const UnsortedIDVector<T>&) = delete;
-	UnsortedIDVector<T>& operator=(UnsortedIDVector<T>&& rhs) noexcept(std::is_nothrow_move_assignable_v<IDType>&& std::is_nothrow_move_assignable_v<decltype(_list)>
-		&& std::is_nothrow_move_assignable_v<decltype(_deletedList)> && std::is_nothrow_move_assignable_v<decltype(_IDList)>)
-	{
-		_nextID = std::move(rhs._nextID);
-		_vectorID = std::move(rhs._vectorID);
-
-		_list = std::move(rhs._list);
-		_deletedList = std::move(rhs._deletedList);
-		_IDList = std::move(rhs._IDList);
-	}
+	UnsortedIDVector<T>& operator=(UnsortedIDVector<T>&& rhs) = delete;
 
 	IDObject<T> AddUniqueObject(const T& value, size_t addOnReserve)
 	{
