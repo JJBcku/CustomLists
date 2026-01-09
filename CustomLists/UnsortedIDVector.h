@@ -495,12 +495,12 @@ public:
 
 		_vectorID = GetNextVectorID();
 
-		if (capacityAfterReset != 0)
-		{
-			_list.reserve(capacityAfterReset);
-			_deletedList.reserve(_list.capacity());
-			_IDList.reserve(_list.capacity());
-		}
+		if (capacityAfterReset == 0)
+			return;
+
+		_list.reserve(capacityAfterReset);
+		_deletedList.reserve(_list.capacity());
+		_IDList.reserve(_list.capacity());
 	}
 
 protected:
