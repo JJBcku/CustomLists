@@ -152,11 +152,6 @@
     <ClInclude Include="OrderIndependentDeletionStack.h" />
     <ClInclude Include="UnsortedIDVector.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="IterativeUnsortedIDVector.cpp" />
-    <ClCompile Include="OrderIndependentDeletionStack.cpp" />
-    <ClCompile Include="UnsortedIDVector.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
