@@ -545,13 +545,13 @@ protected:
 
 		if (reserved > minimumMaximumSize)
 		{
-			if (_list.capacity() == minimumMaximumSize)
+			if (_list.capacity() == _list.max_size())
 				throw std::runtime_error("UnsortedIDVector::ReserveAdditional Error: Program tried to expand data list vector when it's already at maximum size!");
 
-			if (_deletedList.capacity() == minimumMaximumSize)
+			if (_deletedList.capacity() == _deletedList.max_size())
 				throw std::runtime_error("UnsortedIDVector::ReserveAdditional Error: Program tried to expand freed indexes vector when it's already at maximum size!");
 
-			if (_IDList.capacity() == minimumMaximumSize)
+			if (_IDList.capacity() == _IDList.max_size())
 				throw std::runtime_error("UnsortedIDVector::ReserveAdditional Error: Program tried to expand ID list vector when it's already at maximum size!");
 
 			reserved = minimumMaximumSize;

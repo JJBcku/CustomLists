@@ -306,13 +306,13 @@ private:
 
 		if (reserved > minimumMaximumSize)
 		{
-			if (_list.capacity() == minimumMaximumSize)
+			if (_list.capacity() == _list.max_size())
 				throw std::runtime_error("OrderIndependentDeletionStack::ReserveAdditional Error: Program tried to expand data list vector when it's already at maximum size!");
 
-			if (_deletedList.capacity() == minimumMaximumSize)
+			if (_deletedList.capacity() == _deletedList.max_size())
 				throw std::runtime_error("OrderIndependentDeletionStack::ReserveAdditional Error: Program tried to expand freed indexes vector when it's already at maximum size!");
 
-			if (_additionOrder.capacity() == minimumMaximumSize)
+			if (_additionOrder.capacity() == _additionOrder.max_size())
 				throw std::runtime_error("OrderIndependentDeletionStack::ReserveAdditional Error: Program tried to expand addition order vector when it's already at maximum size!");
 
 			reserved = minimumMaximumSize;
