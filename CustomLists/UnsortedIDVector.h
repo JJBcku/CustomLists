@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <utility>
 #include <cassert>
+#include <algorithm>
 
 template<class T>
 class UnsortedIDVector
@@ -333,6 +334,8 @@ public:
 			}
 		}
 
+		std::stable_sort(tempIDList.begin(), tempIDList.end());
+
 		_list = std::move(tempList);
 		_IDList = std::move(tempIDList);
 		_deletedList.clear();
@@ -494,6 +497,7 @@ public:
 		_IDList.shrink_to_fit();
 
 		_vectorID = GetNextVectorID();
+		_nextID = std::numeric_limits<IDType>::lowest();
 
 		if (capacityAfterReset == 0)
 			return;
